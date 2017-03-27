@@ -1,0 +1,19 @@
+{
+  "name": "hello-sessions",
+  "version": "1.0.0",
+  "description": "IT410 assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamisonj/hello-sessions.git"
+  },
+  "author": "Justin Jamison",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamisonj/hello-sessions/issues"
+  },
+  "homepage": "https://github.com/jamisonj/hello-sessions#readme"
+}
