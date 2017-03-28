@@ -38,7 +38,7 @@ app.use(passport.session());
 // });
 
 app.get('/health', function (req, res) {
-    res.status(200); 
+    res.sendStatus(200); 
 });
 
 // app.post('/login', passport.authenticate('local', { successRedirect: '/user', failureRedirect: '/', failureFlash: false })
@@ -46,11 +46,11 @@ app.get('/health', function (req, res) {
 
 app.get('/logout', function (req, res) {
     req.logout();
-    res.status(200); 
+    res.sendStatus(200); 
 });
 
 app.get('/user', function (req, res) {
-	if (!req.user) return res.status(401);
+	if (!req.user) return res.sendStatus(401);
 
 	// else if (!req.user.keys) {
 	// 	req.user.keys = {};
@@ -61,7 +61,7 @@ app.get('/user', function (req, res) {
 });
 
 app.post('/login', passport.authenticate('local'), function(req, res) {
-	if (!req.user) return res.status(401);
+	if (!req.user) return res.sendStatus(401);
 
 	// console.log(data[req.user.id]);
 
@@ -75,14 +75,14 @@ app.post('/login', passport.authenticate('local'), function(req, res) {
 });
 
 app.put('/', function (req, res) {
-	if (!req.user) return res.status(401);
+	if (!req.user) return res.sendStatus(401);
 
 	data[req.user.id][req.query.key] = req.query.value;
 	res.send(data[req.user.id]);
 });
 
 app.delete('/', function (req, res) {
-	if (!req.user) return res.status(401);
+	if (!req.user) return res.sendStatus(401);
 
 	delete data[req.user.id][req.query.key];
 	res.send(data[req.user.id]);
