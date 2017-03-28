@@ -63,16 +63,12 @@ app.get('/user', function (req, res) {
 app.post('/login', passport.authenticate('local'), function(req, res) {
 	if (!req.user) return res.sendStatus(401);
 
-	// if (!req.user.keys) {
-	// 	req.user.keys = {};
-	// }
-
-	console.log(data[req.user.id]);
+	// console.log(data[req.user.id]);
 
 	// If the user doesn't have an entry in data, add one.
 	if (!data[req.user.id]) {
 		data[req.user.id] = {};
-		console.log("Set data object for user " + req.user.id);
+		// console.log("Set data object for user " + req.user.id);
 	}
 
 	res.send(data[req.user.id]);
