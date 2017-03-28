@@ -33,9 +33,9 @@ app.use(session({ secret: 'secret key', resave: false, saveUninitialized: true }
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.get('/', function (req, res) {
-    res.sendFile('index.html', {root: '.'});
-});
+// app.get('/', function (req, res) {
+//     res.sendFile('index.html', {root: '.'});
+// });
 
 app.get('/health', function (req, res) {
     res.sendStatus(200); 
